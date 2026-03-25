@@ -3,32 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Org Registration</title>
+    <title>Organization Registration</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-shapes"> </div>
+    <div class="background-animate"></div>
+    <div class="particles" id="particles"></div>
 
-    <div class="glass-card">
-        <h2 style="color: white; text-align: center;">Organization Registration</h2>
-        <form id="regForm">
-            <input type="text" name="full_name" placeholder="Full Name" required>
-            <div style="display: flex; gap: 10px;">
-                <input type="number" name="age" placeholder="Age" required>
-                <select name="gender" required>
-                    <option value="" disabled selected>Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-            </div>
-            <input type="text" name="address" placeholder="Address" required>
-            <input type="text" name="contact" placeholder="Contact Number" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="text" name="dept" placeholder="Department/Org" required>
-            <button type="submit" id="submitBtn">Register Now</button>
-        </form>
+    <div class="container">
+        <div class="glass-card animate-up">
+            <h2>Member Registration</h2>
+            <form id="registrationForm">
+                <div class="input-group">
+                    <input type="text" id="fullName" required placeholder="Full Name">
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <input type="number" id="age" required placeholder="Age">
+                    </div>
+                    <div class="input-group">
+                        <select id="gender" required>
+                            <option value="" disabled selected>Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="address" required placeholder="Address">
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="contact" required placeholder="Contact Number">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" required placeholder="Email Address">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="dept" required placeholder="Department/Organization">
+                </div>
+                
+                <button type="submit" id="submitBtn">
+                    <span class="btn-text">Register Now</span>
+                    <div class="spinner hidden"></div>
+                </button>
+            </form>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <div id="successModal" class="modal hidden">
+        <div class="modal-content zoom-in">
+            <div class="checkmark">L</div>
+            <h3>Registration Successful!</h3>
+            <p>Your details have been recorded.</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>
