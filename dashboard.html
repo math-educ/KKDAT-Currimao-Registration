@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page">
+    <div class="background-animate"></div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content glass-card">
+            <h2>Admin Login</h2>
+            <p>Please sign in to view records.</p>
+            <form id="loginForm">
+                <input type="email" id="adminEmail" placeholder="Admin Email" required>
+                <input type="password" id="adminPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboardContent" class="hidden">
+        <nav class="glass-nav">
+            <h1>Monitoring Sheet</h1>
+            <div class="nav-actions">
+                <button id="exportBtn" class="secondary-btn">Export CSV</button>
+                <button id="logoutBtn" class="danger-btn">Logout</button>
+            </div>
+        </nav>
+
+        <main class="container-wide">
+            <div class="controls glass-card">
+                <input type="text" id="searchBar" placeholder="Search by name or email...">
+            </div>
+
+            <div class="table-container glass-card">
+                <table id="registrationTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Dept</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
